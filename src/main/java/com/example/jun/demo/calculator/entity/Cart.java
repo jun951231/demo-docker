@@ -6,18 +6,13 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.util.List;
+@Document(collection = "carts")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "users")
-public class User {
-    private @Id long userId;
-    private String username;
-    private String name;
-    private String password;
-    private String email;
-    private Date regDate;
-
+public class Cart {
+    private @Id long cartId;
+    private List<Item> cartItems;
 
 }
